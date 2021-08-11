@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package kpmv2ctypes
 
@@ -94,7 +94,6 @@ func newRanfunctionName(ranfunctionName *e2sm_kpm_v2.RanfunctionName) (*C.RANfun
 		rfi := C.long(ranfunctionName.RanFunctionInstance)
 		ranfunctionNameC.ranFunction_Instance = &rfi
 	}
-
 
 	return &ranfunctionNameC, nil
 }

@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package kpmv2ctypes
 
@@ -76,7 +76,7 @@ func newE2SmKpmRanfunctionDescription(e2SmKpmRanfunctionDescription *e2sm_kpm_v2
 	}
 
 	e2SmKpmRanfunctionDescriptionC := C.E2SM_KPMv2_RANfunction_Description_t{
-		ranFunction_Name:           *ranFunctionNameC,
+		ranFunction_Name: *ranFunctionNameC,
 		//ric_KPM_Node_List:          ricKpmNodeListC,
 		//ric_EventTriggerStyle_List: ricEventTriggerStyleListC,
 		//ric_ReportStyle_List:       ricReportStyleListC,
