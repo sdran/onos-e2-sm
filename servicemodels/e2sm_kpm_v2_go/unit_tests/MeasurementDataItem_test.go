@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package kpmv2
 
@@ -44,7 +44,7 @@ func createMeasurementDataItem() (*e2sm_kpm_v2_go.MeasurementDataItem, error) {
 
 	incf := e2sm_kpm_v2_go.IncompleteFlag_INCOMPLETE_FLAG_TRUE
 	measDataItem := &e2sm_kpm_v2_go.MeasurementDataItem{
-		MeasRecord: measRecord,
+		MeasRecord:     measRecord,
 		IncompleteFlag: &incf,
 	}
 

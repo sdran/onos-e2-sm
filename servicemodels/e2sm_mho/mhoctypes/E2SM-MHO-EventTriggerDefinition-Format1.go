@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package mhoctypes
 
@@ -72,19 +72,19 @@ func newE2SmMhoEventTriggerDefinitionFormat1(e2SmMhoEventTriggerDefinitionFormat
 	var err error
 	e2SmMhoEventTriggerDefinitionFormat1C := C.E2SM_MHO_EventTriggerDefinition_Format1_t{}
 
-    triggerTypeC, err := newMhoTriggerType(&e2SmMhoEventTriggerDefinitionFormat1.TriggerType)
-    if err != nil {
-        return nil, fmt.Errorf("newMhoTriggerType() %s", err.Error())
-    }
+	triggerTypeC, err := newMhoTriggerType(&e2SmMhoEventTriggerDefinitionFormat1.TriggerType)
+	if err != nil {
+		return nil, fmt.Errorf("newMhoTriggerType() %s", err.Error())
+	}
 
-    //instance is optional
-    if e2SmMhoEventTriggerDefinitionFormat1.ReportingPeriodMs != -1 {
+	//instance is optional
+	if e2SmMhoEventTriggerDefinitionFormat1.ReportingPeriodMs != -1 {
 
-        reportingPeriodMsC := C.long(e2SmMhoEventTriggerDefinitionFormat1.ReportingPeriodMs)
-        e2SmMhoEventTriggerDefinitionFormat1C.reportingPeriod_ms = &reportingPeriodMsC
-    }
-    //ToDo - check whether pointers passed correctly with regard to C-struct's definition .h file
-    e2SmMhoEventTriggerDefinitionFormat1C.triggerType = *triggerTypeC
+		reportingPeriodMsC := C.long(e2SmMhoEventTriggerDefinitionFormat1.ReportingPeriodMs)
+		e2SmMhoEventTriggerDefinitionFormat1C.reportingPeriod_ms = &reportingPeriodMsC
+	}
+	//ToDo - check whether pointers passed correctly with regard to C-struct's definition .h file
+	e2SmMhoEventTriggerDefinitionFormat1C.triggerType = *triggerTypeC
 
 	return &e2SmMhoEventTriggerDefinitionFormat1C, nil
 }

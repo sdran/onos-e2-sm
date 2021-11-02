@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package kpmv2ctypes
 
@@ -74,7 +74,7 @@ func newRicKpmnodeItem(ricKpmnodeItem *e2sm_kpm_v2.RicKpmnodeItem) (*C.RIC_KPMNo
 	}
 
 	ricKpmnodeItemC := C.RIC_KPMNode_Item_KPMv2_t{
-		ric_KPMNode_Type:             *ricKpmnodeTypeC,
+		ric_KPMNode_Type: *ricKpmnodeTypeC,
 		//cell_Measurement_Object_List: cellMeasurementObjectListC,
 	}
 
@@ -103,11 +103,9 @@ func decodeRicKpmnodeItem(ricKpmnodeItemC *C.RIC_KPMNode_Item_KPMv2_t) (*e2sm_kp
 	}
 	//fmt.Printf("That's what was decoded from C: \n %v \n", ricKpmnodeType)
 
-
 	ricKpmnodeItem := e2sm_kpm_v2.RicKpmnodeItem{
 		RicKpmnodeType:            ricKpmnodeType,
 		CellMeasurementObjectList: make([]*e2sm_kpm_v2.CellMeasurementObjectItem, 0),
-
 	}
 
 	//instance is optional
